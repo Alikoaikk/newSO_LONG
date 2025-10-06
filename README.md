@@ -46,7 +46,7 @@ This will compile the project and generate the `so_long` executable.
 
 ## Controls
 
-- **Arrow Keys**: Move the player
+- **W/A/S/D**: Move the player (up/left/down/right)
 - **ESC**: Exit the game
 - **X Button**: Close the window
 
