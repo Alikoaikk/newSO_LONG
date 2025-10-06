@@ -2,15 +2,11 @@
 
 ![Game Preview](image.png)
 
-*"It does not do to dwell on dreams and forget to live... but it's totally fine to play video games!"* - Albus Dumbledore (probably)
-
 ## Description
 
-Welcome to Hogwarts' most challenging extra-curricular activity! 🏰
+A 2D top-down game developed as part of the 42 school curriculum. The player controls Harry Potter through dungeon-like maps with the objective of collecting all Horcruxes before reaching the exit.
 
-In this 2D magical adventure, you play as Harry Potter navigating through mysterious dungeons to collect all the Horcruxes (because apparently seven wasn't enough). Once you've grabbed them all, find the magical exit before Voldemort's Wi-Fi password changes again!
-
-Built with the MiniLibX graphics library and powered by pure C wizardry, this game features collision detection smoother than Snape's haircare routine and pathfinding more reliable than the Marauder's Map.
+This project implements core game development concepts including sprite rendering, player movement, collision detection, and map validation. Built entirely in C using the MiniLibX graphics library, it demonstrates proficiency in memory management, event handling, and algorithmic problem-solving.
 
 ## Magical Features ⚡
 
@@ -22,22 +18,22 @@ Built with the MiniLibX graphics library and powered by pure C wizardry, this ga
 - **Foolproof map validation**: Checks walls, paths, and won't let you create a Room of Requirement
 - **Custom maps**: Design your own dungeons with `.ber` files (Moody would be proud)
 
-## Requirements (Muggle Equipment Needed) 🔧
+## Requirements
 
-- Linux operating system (No, Windows doesn't count as a Patronus)
-- X11 development libraries (Ancient magic, basically)
-- Make (Not the wand kind)
-- GCC compiler (Greater Compiler of C-code)
+- Linux operating system
+- X11 development libraries
+- Make
+- GCC compiler
 
-## Installation (Casting the Spell) 🎯
+## Installation
 
 ```bash
 make
 ```
 
-*Accio executable!* This command summons the `so_long` binary along with the MiniLibX library. Much faster than waiting for your Hogwarts letter.
+This will compile the project and generate the `so_long` executable.
 
-## Usage (How to Start Your Adventure) 🎮
+## Usage
 
 ```bash
 ./so_long <map_file.ber>
@@ -48,35 +44,32 @@ make
 ./so_long maps/valid_maps/map_normal.ber
 ```
 
-*Pro tip: Start with `map_mini.ber` if you're still learning to walk in the wizarding world.*
+## Controls
 
-## Controls (Your Spellbook) 📖
+- **Arrow Keys**: Move the player
+- **ESC**: Exit the game
+- **X Button**: Close the window
 
-- **Arrow Keys**: Navigate through the dungeon (No broomstick required)
-- **ESC**: Quit faster than Ron abandoning the trio (we forgive you, Ron)
-- **X Button**: Close the window and pretend you were studying
+## Map Format
 
-## Map Format (Enchantment Instructions) 🗺️
+Maps are defined in `.ber` files using the following characters:
 
-Create your dungeon blueprints using `.ber` files (think of them as magical parchments).
+- `1`: Wall
+- `0`: Floor (empty space)
+- `P`: Player starting position
+- `C`: Collectible (Horcrux)
+- `E`: Exit
 
-**The Magical Symbols:**
-- `1`: Wall (Harder than Hagrid's rock cakes)
-- `0`: Floor (Safe to walk on, unlike the Whomping Willow)
-- `P`: Player start (Where Harry spawns in)
-- `C`: Collectible Horcrux (Shiny dark magic objects)
-- `E`: Exit (Your way back to the common room)
+### Map Validation Rules
 
-### The Sacred Rules (Break Them and Face Detention) 📜
+- Map must be rectangular
+- Map must be completely surrounded by walls (`1`)
+- Must contain exactly one player (`P`)
+- Must contain exactly one exit (`E`)
+- Must contain at least one collectible (`C`)
+- Must have a valid path from player to all collectibles and the exit
 
-- Map must be **rectangular** (No weird shapes - this isn't Divination class)
-- Map must be **completely surrounded by walls** (`1`) - We don't want Harry falling into the void
-- Must have **exactly ONE player** (`P`) - No Time-Turner shenanigans here
-- Must have **exactly ONE exit** (`E`) - One way out, just like Platform 9¾
-- Must have **at least ONE Horcrux** (`C`) - Otherwise what's the point?
-- Must have a **valid path** from Harry to all Horcruxes and the exit (No impossible mazes, Dumbledore)
-
-### Example Dungeon
+### Example Map
 
 ```
 111111
@@ -85,37 +78,33 @@ Create your dungeon blueprints using `.ber` files (think of them as magical parc
 1C00E1
 111111
 ```
-*A simple 5x6 dungeon with 2 Horcruxes. Perfect for your first day at Hogwarts!*
 
-## Project Structure (Hogwarts Library Layout) 📚
+## Project Structure
 
 ```
 .
-├── srcs/              # The main spellbook (core game logic)
-├── includes/          # Ancient scrolls (header files)
-├── mlx/              # MiniLibX graphics library (powered by Felix Felicis)
-├── ft_printf/        # Custom printf (because printf was a Muggle invention)
-├── get_next_line/    # File reading charm
-├── sprites/          # Magical portraits (.xpm files of Harry & Horcruxes)
-└── maps/             # The Map Collection
-    ├── valid_maps/   # Approved by the Ministry
-    └── invalid_maps/ # Cursed maps (for testing error handling)
+├── srcs/              # Main source files (game logic)
+├── includes/          # Header files
+├── mlx/              # MiniLibX graphics library
+├── ft_printf/        # Custom printf implementation
+├── get_next_line/    # File reading utility
+├── sprites/          # Game sprites (.xpm files)
+└── maps/             # Map files
+    ├── valid_maps/   # Valid test maps
+    └── invalid_maps/ # Invalid test maps (for error handling)
 ```
 
-## Compilation Spells 🪄
+## Make Commands
 
-- **`make`**: Summon the executable (like calling the Knight Bus)
-- **`make clean`**: Vanish all object files (Evanesco!)
-- **`make fclean`**: Nuclear option - removes everything (Avada Kedavra for files)
-- **`make re`**: Start fresh (basically a Pensieve for your code)
+- `make`: Build the project
+- `make clean`: Remove object files
+- `make fclean`: Remove object files and executable
+- `make re`: Rebuild the project from scratch
 
-## Credits
+## Author
 
-**Created by:** akoaik (42 student)
-
-*"After all this time?"*
-*"Always compiling."* 💚
+akoaik - [42 School](https://42.fr/)
 
 ---
 
-**Disclaimer:** No Horcruxes were harmed in the making of this game. Side effects may include: improved C programming skills, better understanding of graphics libraries, and an uncontrollable urge to yell "Expecto Patronum!" at segfaults.
+*Note: This project features a Harry Potter theme with custom sprites and Horcrux collectibles. All Harry Potter references are used for educational and entertainment purposes.*
