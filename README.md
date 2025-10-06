@@ -103,7 +103,7 @@ Maps are defined in `.ber` files using the following characters:
 
 ## Author
 
-akoaik - [42 School](https://42.fr/)
+akoaik - 42 Beirut
 
 ---
 
