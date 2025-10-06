@@ -6,7 +6,7 @@
 /*   By: akoaik <akoaik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 23:07:09 by akoaik            #+#    #+#             */
-/*   Updated: 2025/08/26 20:45:45 by akoaik           ###   ########.fr       */
+/*   Updated: 2025/10/07 00:10:37 by akoaik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	**duplicate_map(char **map, int lines)
 		copy[i][j] = '\0';
 		i++;
 	}
-	copy[lines] = '\0';
+	copy[lines] = NULL ;
 	return (copy);
 }
 
