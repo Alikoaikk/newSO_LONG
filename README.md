@@ -8,6 +8,8 @@ A 2D top-down game developed as part of the 42 school curriculum. The player con
 
 This project implements core game development concepts including sprite rendering, player movement, collision detection, and map validation. Built entirely in C using the MiniLibX graphics library, it demonstrates proficiency in memory management, event handling, and algorithmic problem-solving.
 
+## Video link : https://youtu.be/S8EFh6rSWDw?si=6wL2AtSBFscp3dZJ
+
 ## Magical Features ⚡
 
 - **Crystal-clear graphics**: 120x120 pixel sprites (way better than those moving staircases)
